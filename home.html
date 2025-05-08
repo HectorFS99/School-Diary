@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Relief&display=swap" rel="stylesheet">
+    <title>School Diary</title>
+</head>
+<body>
+    <div id="menuLateral" class="menu-lateral">
+        <ul>
+            <li>
+                <a id="optFechar" href="javascript:void(0)" class="btn-fechar" onclick="expandirMenu()">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+            </li>            
+            <li>
+                <a id="optTurmas" href="#">
+                    <i class="fa-solid fa-chalkboard-user"></i>Turmas
+                </a>
+            </li>
+            <li>
+                <a id="optLembrancas" href="#">
+                    <i class="fa-solid fa-images"></i>Lembranças
+                </a>
+            </li>
+        </ul>
+    </div>
+    <main>
+
+    </main>
+    <script>
+        function expandirMenu() {
+            var menuLateral = document.getElementById("menuLateral");
+
+            var optTurmas = document.getElementById("optTurmas");
+            var optLembrancas = document.getElementById("optLembrancas");
+            var optFechar = document.getElementById("optFechar");
+
+            if (menuLateral.style.width == "100px") {
+                menuLateral.style.width = "300px"
+                optFechar.innerHTML = "<i class=\"fa-solid fa-xmark\"></i>"
+                
+                setTimeout(() => {
+                    optTurmas.innerHTML = "<i class=\"fa-solid fa-chalkboard-user\"></i>Turmas"
+                    optLembrancas.innerHTML = "<i class=\"fa-solid fa-images\"></i>Lembranças"
+                }, "400");    
+            } else {
+                menuLateral.style.width = "100px"
+                optFechar.innerHTML = "<i class=\"fa-solid fa-bars\"></i>"
+
+                optTurmas.innerHTML = "<i class=\"fa-solid fa-chalkboard-user\"></i>"
+                optLembrancas.innerHTML = "<i class=\"fa-solid fa-images\"></i>"
+            }
+        }
+    </script>
+</body>
+</html>
